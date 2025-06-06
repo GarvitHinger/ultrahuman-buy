@@ -19,3 +19,17 @@
   font-weight: 700;
   font-size: 20px;
 }
+
+@media (max-width: 768px)  {
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .nav-bar-logo {
+  position: relative;
+  left: 0px;
+  font-weight: 700;
+  font-size: 20px;
+}
+  }
+}
