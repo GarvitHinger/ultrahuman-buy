@@ -6,7 +6,7 @@ const tradeInQuotes = [
   "Get upto ₹10000 off for trade in",
 ];
 
-const Description = ({productName="Ring AIR", price=31000, dispatchDate="Jun 7"}) => {
+const Description = ({productName="Ring AIR", price=28499, dispatchDate="Jun 7"}) => {
   const [quoteIndex, setQuoteIndex] = useState(0);
 
   useEffect(() => {

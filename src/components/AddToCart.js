@@ -14,7 +14,7 @@ const AddToCart = () => {
     powerPlug,
     protection } = useProduct();
   
-  let finalPrice = 31798;
+  let finalPrice = 28499;
 
   if (charger === 'voyager') {
     finalPrice += 3799;
@@ -89,7 +89,7 @@ const AddToCart = () => {
         {tradeOption === "trade" && 
           (<div>
           <p>Trade in credit</p>
-          <p>{"-₹" + deduction}</p>
+          <p>{"-₹" + deduction.toLocaleString()}</p>
           </div>)
           
         }
@@ -97,7 +97,7 @@ const AddToCart = () => {
       <hr />
       <div className="total-due">
         <p>Total due today</p>
-        <p>{"₹" +finalPrice}</p>
+        <p>{"₹" +finalPrice.toLocaleString()}</p>
       </div>
       <p>Dispatched by : Tomorrow, Jun 7 (after size selection)</p>
       <button className="add-to-cart-btn">Add to cart</button>
