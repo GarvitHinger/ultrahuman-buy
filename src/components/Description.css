@@ -1,0 +1,53 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: black;
+  /* font-family: 'Inter', sans-serif; */
+}
+
+.ring-name {
+  font-size: 40px;
+  font-weight: 700;
+  opacity: 1;
+}
+
+.ring-price {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+}
+
+.dispatch-detail {
+  font-size: 14px;
+  color: #555;
+}
+
+.note {
+  color: #888;
+}
+
+.trade-in-box {
+  margin-top: 12px;
+  background-color: #f5f5f5;
+  padding: 14px 18px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.plus-icon {
+  margin-left: 6px;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #777;
+}

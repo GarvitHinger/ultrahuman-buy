@@ -1,0 +1,108 @@
+import React from 'react'
+import { useProduct } from '../context/ProductContext.js'
+import "./AddToCart.css"
+const AddToCart = () => {
+  const { selectedColor,
+    hasKit,
+    selectedSize,
+    charger,
+    tradeOption,
+    deduction,
+    selectedRing,
+    engraving,
+    engravingText,
+    powerPlug,
+    protection } = useProduct();
+  
+  let finalPrice = 31798;
+
+  if (charger === 'voyager') {
+    finalPrice += 3799;
+  }
+  if (engraving === 'add') {
+    finalPrice += 3299;
+  }
+
+  if (powerPlug === '2year') {
+    finalPrice += 3988;
+  }
+  else if (powerPlug === '1year') {
+    finalPrice += 2499;
+  }
+  
+  if (protection === '2year') {
+    finalPrice += 4400;
+  }
+  else if (protection === '1year') {
+    finalPrice += 2988;
+  }
+
+  if (deduction > 0) {
+    finalPrice -= deduction;
+  } 
+  
+  return (
+    <div className="cart">
+      <p className="card-title">Almost there. Here’s your order summary.</p>
+      <p>Ultrahuman Ring AIR {engraving === "add" && "(with engraving)"} <br />
+        {selectedColor}, {selectedSize === null ? "Sizing kit included" : selectedSize + " size"}
+      </p>
+      <div className="price-breakdown">
+        <div>
+          <p>Ring AIR {tradeOption === "trade" && "(before trade in)"}</p>
+          <p>₹28,499</p>
+        </div>
+
+        {protection !== 'none' && (
+          protection === '2year' ? (
+            <div>
+              <p>UltrahumanX - 2 years</p>
+              <p>+₹4,400</p>
+            </div>
+          ) : (
+              <div>
+                <p>UltrahumanX - 1 years</p>
+                <p>+₹2,988</p>
+              </div>
+          )
+        )}
+
+        {powerPlug !== 'none' && (
+          powerPlug === '2year' ? (
+            <div>
+              <p>Cardio Adaptibility</p>
+              <p>+₹3,988</p>
+            </div>
+          ) : (
+              <div>
+                <p>Cardio Adaptibility</p>
+                <p>+₹2,499</p>
+              </div>
+          )
+        )}
+        {charger === "voyager" && 
+          (<div>
+          <p>Voyager Ring Charger</p>
+          <p>+₹3,799</p>
+          </div>)
+        } 
+        {tradeOption === "trade" && 
+          (<div>
+          <p>Trade in credit</p>
+          <p>{"-₹" + deduction}</p>
+          </div>)
+          
+        }
+      </div>
+      <hr />
+      <div className="total-due">
+        <p>Total due today</p>
+        <p>{"₹" +finalPrice}</p>
+      </div>
+      <p>Dispatched by : Tomorrow, Jun 7 (after size selection)</p>
+      <button className="add-to-cart-btn">Add to cart</button>
+    </div>
+  )
+}
+
+export default AddToCart

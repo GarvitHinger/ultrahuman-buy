@@ -1,0 +1,70 @@
+.charger-card {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.charger-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.subtitle {
+  opacity: 0.6;
+}
+
+.charger-card:hover {
+  background-color: #eee;
+}
+
+.charger-card.selected {
+  border-color: #333;
+  background-color: #dcdcdc;
+}
+
+.voyager {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+
+  position: absolute;
+  top:0px;
+  right: 10px;
+  background-color: #00ff84;
+  color: black;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+}
+
+
+.voyager-img {
+  
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.voyager-price {
+    font-weight: 600;
+    
+}
+
+.voyager-desc {
+    opacity: 0.6;
+}
+
+.regular-desc {
+    font-weight: 600;
+}

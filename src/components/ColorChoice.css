@@ -1,0 +1,50 @@
+.color-choice-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.color-cards {
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.color-card {
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #eeeeee;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+
+
+.color-card:hover {
+  background-color: #eaeaea;
+}
+
+.color-card.selected {
+  border-color: #333;
+  background-color: #eeeeee;
+}
+
+.ring-image {
+  width: 100x;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.color-label {
+  margin-top: 8px;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 500;
+}
