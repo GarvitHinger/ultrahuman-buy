@@ -48,3 +48,13 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+@media (max-width: 768px) {
+.ring-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+}
