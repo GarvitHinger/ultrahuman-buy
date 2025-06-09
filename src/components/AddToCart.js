@@ -14,32 +14,50 @@ const AddToCart = () => {
     powerPlug,
     protection } = useProduct();
   
-  let finalPrice = 28499;
+   let finalPrice = 28499;
+  let items = [`Ring AIR (${selectedColor})`];
+
+  if (selectedSize === null) {
+    items.push("Sizing kit included");
+  } else {
+    items.push(`Size: ${selectedSize}`);
+  }
+
+  if (engraving === 'add') {
+    finalPrice += 3299;
+    items.push(`Engraving: ${engravingText || "Yes"} (+₹3,299)`);
+  }
 
   if (charger === 'voyager') {
     finalPrice += 3799;
-  }
-  if (engraving === 'add') {
-    finalPrice += 3299;
+    items.push("Voyager Ring Charger (+₹3,799)");
   }
 
   if (powerPlug === '2year') {
     finalPrice += 3988;
-  }
-  else if (powerPlug === '1year') {
+    items.push("Cardio Adaptibility - 2 years (+₹3,988)");
+  } else if (powerPlug === '1year') {
     finalPrice += 2499;
-  }
-  
-  if (protection === '2year') {
-    finalPrice += 4400;
-  }
-  else if (protection === '1year') {
-    finalPrice += 2988;
+    items.push("Cardio Adaptibility - 1 year (+₹2,499)");
   }
 
-  if (deduction > 0) {
+  if (protection === '2year') {
+    finalPrice += 4400;
+    items.push("UltrahumanX - 2 years (+₹4,400)");
+  } else if (protection === '1year') {
+    finalPrice += 2988;
+    items.push("UltrahumanX - 1 year (+₹2,988)");
+  }
+
+  if (tradeOption === 'trade' && deduction > 0) {
     finalPrice -= deduction;
-  } 
+    items.push(`Trade-in credit: -₹${deduction.toLocaleString()}`);
+  }
+
+  const handleAddToCart = () => {
+    const summary = items.join('\n') + `\n\nTotal: ₹${finalPrice.toLocaleString()}`;
+    alert("Your Order Summary:\n\n" + summary);
+  };
   
   return (
     <div className="cart">
@@ -100,7 +118,7 @@ const AddToCart = () => {
         <p>{"₹" +finalPrice.toLocaleString()}</p>
       </div>
       <p>Dispatched by : Tomorrow, Jun 7 (after size selection)</p>
-      <button className="add-to-cart-btn">Add to cart</button>
+      <button className="add-to-cart-btn" onClick={handleAddToCart}>Add to cart</button>
     </div>
   )
 }

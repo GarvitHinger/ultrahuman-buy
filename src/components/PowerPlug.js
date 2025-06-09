@@ -35,7 +35,7 @@ const PowerPlug = () => {
       <p className="powerplug-title">
         PowerPlug. <span className="subtitle">Protect your heart health.</span>
       </p>
-      <p className="description">
+      <p className="powerplug-description">
         Monitor night time heart trends to evaluate your heart's response to stressors.
       </p>
 
