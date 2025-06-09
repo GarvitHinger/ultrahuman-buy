@@ -2,14 +2,14 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* Prevent body scroll */
+  overflow: hidden;
   font-family: sans-serif;
 }
 
 .app-wrapper {
   width: 100vw;
   height: 100vh;
-  overflow: hidden; /* Prevent horizontal and vertical scroll on wrapper */
+  overflow: hidden;
 }
 
 .content {
@@ -22,7 +22,7 @@ html, body {
   width: 60%;
   position: sticky;
   top: 0;
-  height: 100%;
+  height: 100vh;
   background: #f7f7f7;
   display: flex;
   justify-content: center;
@@ -31,8 +31,8 @@ html, body {
 
 .right-part {
   width: 40%;
-  height: 100%;
-  overflow-y: auto; /* Scroll only here */
+  height: 100vh;
+  overflow-y: auto;
   box-sizing: border-box;
   padding: 30px 40px;
 }
@@ -43,10 +43,15 @@ html, body {
   margin: 75px 0;
 }
 
-/* Mobile view adjustments */
 @media (max-width: 768px) {
   html, body {
-    overflow: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .app-wrapper {
+    height: auto;
+    overflow: visible;
   }
 
   .content {
@@ -56,10 +61,8 @@ html, body {
 
   .left-part {
     position: static !important;
-    top: auto !important;
     height: auto !important;
     width: 100%;
-    overflow: visible !important;
   }
 
   .right-part {
